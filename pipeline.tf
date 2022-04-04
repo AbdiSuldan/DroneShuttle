@@ -22,7 +22,7 @@ resource "aws_codebuild_project" "tf-plan" {
   }
    source{
      type = "CODEPIPELINE"
-     buildspec = file("/buildspec/plan-buildspec.yml")
+     buildspec = file("buildspec/plan-buildspec.yml")
    }
 }
 //////////code build apply 
@@ -48,7 +48,7 @@ resource "aws_codebuild_project" "tf-apply" {
   }
    source{
      type = "CODEPIPELINE"
-     buildspec = file("/buildspec/apply-buildspec.yml")
+     buildspec = file("buildspec/apply-buildspec.yml")
    }
 }
 resource "aws_codepipeline" "cicd_pipeline" {
@@ -71,8 +71,8 @@ resource "aws_codepipeline" "cicd_pipeline" {
             version = "1"
             output_artifacts = ["tf-code"]
             configuration = {
-                FullRepositoryId = "AbdiSuldan/DroneShuttle"
-                BranchName   = "main"
+                FullRepositoryId = "davoclock/aws-cicd-pipeline"
+                BranchName   = "master"
                 ConnectionArn = var.codestar_connector_credentials
                 OutputArtifactFormat = "CODE_ZIP"
             }
