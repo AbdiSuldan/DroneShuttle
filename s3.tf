@@ -3,6 +3,6 @@ resource "aws_s3_bucket" "pipe_artifacts23" {
 
   tags = {
     Name        = "buckets for pipelines"
-    Environment = "Tests"
+    Environment = "Testss"
   }
 }
