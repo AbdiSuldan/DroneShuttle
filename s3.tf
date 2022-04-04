@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "pipe_artifacts23" {
   }
 }
 resource "aws_s3_bucket" "pipe_123testing" {
-  bucket = "just a test"
+  bucket = "just testing"
 
   tags = {
     Name        = "buckets for pipelines"

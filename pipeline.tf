@@ -22,7 +22,7 @@ resource "aws_codebuild_project" "tf-plan" {
   }
    source{
      type = "CODEPIPELINE"
-     buildspec = file("plan-buildspec.yml")
+     buildspec = file("/buildspec/plan-buildspec.yml")
    }
 }
 //////////code build apply 
@@ -48,7 +48,7 @@ resource "aws_codebuild_project" "tf-apply" {
   }
    source{
      type = "CODEPIPELINE"
-     buildspec = file("/apply-buildspec.yml")
+     buildspec = file("/buildspec/apply-buildspec.yml")
    }
 }
 resource "aws_codepipeline" "cicd_pipeline" {
