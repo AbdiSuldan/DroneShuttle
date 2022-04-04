@@ -54,7 +54,7 @@ resource "aws_codebuild_project" "tf-apply" {
 resource "aws_codepipeline" "cicd_pipeline" {
 
     name = "tf-cicd"
-    role_arn = aws_iam_role.codepipeline-role-test.arn
+    role_arn = aws_iam_role.tf-codepipeline-role.arn
 
     artifact_store {
         type="S3"
